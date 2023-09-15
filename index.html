@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart kontejner</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Vyberte parametry pro Váš SMART kontejner</h1>
+    </header>
+
+    <main>
+        <form>
+            <div class="container">
+                <div class="input-container">
+                    <div class="question">
+                        <label for="medium">Médium:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="medium" name="medium">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte název uskladněného plynu, nebo chemický vzorec</span>
+                    </div>
+                </div>
+            
+                <div class="input-container">
+                    <div class="question">
+                        <label for="maxPressure">Max tlak:</label>
+                    </div>
+                    <div class="response">
+                        <input type="number" id="maxPressure" name="maxPressure">
+                        <span class="unit">bar</span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte požadovaný maximální pracovní tlak média</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="totalCapacity">Celková kapacita:</label>
+                    </div>
+                    <div class="response">
+                        <input type="number" id="totalCapacity" name="totalCapacity">
+                        <span class="unit">kg</span>
+                    </div>
+                    <div class="description">
+                        <span class="descrition">Uveďte, jaké maximální množství (hmotnost) plynu chcete uskladnit</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="totalWaterVolume">Celkový vodní objem:</label>
+                    </div>
+                    <div class="response">
+                        <input type="number" id="totalWaterVolume" name="totalWaterVolume">
+                        <span class="unit">l</span>
+                    </div>
+                    <div class="description">
+                        <span class="descrition">Požadujete-li určitý vodní objem</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="pressureCycles">Počet tlakových stupňů:</label>
+                    </div>
+                    <div class="response">
+                        <input type="number" id="pressureCycles" name="pressureCycles">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span class="descrition">Požadujete-li mít oddělené sekce v zásobníku pro práci s různými tlaky (např. pro kaskádové přepouštění) - Uveďte počet</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="fillingCycles">Cykly napouštění:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="fillingCycles" name="fillingCycles">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span class="descrition">Uveďte, v jakém režimu bude zásobník provozován. Např. - bude naplněn na maximální tlak a pak bude postupně vyprazdňován až na 30% max. tlaku. Nebo - Plnění zásobníku bude trvale kontimuální a odběr také. Apod….</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="fillingRate">Rychlost napouštění:</label>
+                    </div>
+                    <div class="response">
+                        <input type="number" id="fillingRate" name="fillingRate">
+                        <span class="unit">kg/min</span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte, jakou požadujete minimální rychlost pro plnění zásobníku</span>
+                    </div>
+                </div>
+            
+                <div class="input-container">
+                    <div class="question">
+                        <label for="dischargeRate">Rychlost vypouštění:</label>
+                    </div>
+                    <div class="response">
+                        <input type="number" id="dischargeRate" name="dischargeRate">
+                        <span class="unit">kg/min</span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte, jakou požadujete minimální rychlost pro vyprazdňování zásobníku</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="place">Vyberte misto umístění:</label>
+                    </div>
+                    <div class="response">
+                        <select id="place" name="place">
+                            <option value="venku">Venku</option>
+                            <option value="uvnitr">Uvnitř</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="prostredi">Vyberte prostředí umístění:</label>
+                    </div>
+                    <div class="response">
+                        <select id="place" name="place">
+                            <option value="normalni">Normální</option>
+                            <option value="suche">Suché</option>
+                            <option value="suche">Vlhké</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span></span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="teplota">Teplota okolí (rozpětí):</label>
+                    </div>
+                    <div class="response">
+                        <input type="number" id="tempreture" name="tempreture">
+                        <span class="unit">st.C</span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte rozsah okolní teploty zásobníku</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="ucel">Účel:</label>
+                    </div>
+                    <div class="response">
+                        <select id="ucel" name="ucel">
+                            <option value="transportni">Transportní</option>
+                            <option value="stacionarni">Stacionární</option>
+                            <option value="kombinace">Kombinace</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda bude zásobnák trvale v místě, nebo bude sloužit k přepravě, nebo bude naplněný přivezen a prázdný odvezen</span>
+                    </div>
+                </div>
+
+
+                <div class="input-container">
+                    <input type="submit" value="Poptat cenu">
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Smart kontejner. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+
