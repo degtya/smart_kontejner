@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart kontejner</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
 </head>
 <body>
     <nav>
@@ -18,9 +20,11 @@
         </ul>
     </nav>
 
-    <header>
+    <img src="text.jpg">
+
+    <!-- <header>
         <h1>Vyberte parametry pro Váš SMART kontejner</h1>
-    </header>
+    </header> -->
 
     <main>
         <form>
@@ -135,6 +139,7 @@
                     </div>
                     <div class="response">
                         <select id="place" name="place">
+                            <option value="-">-</option>
                             <option value="venku">Venku</option>
                             <option value="uvnitr">Uvnitř</option>
                         </select>
@@ -151,6 +156,7 @@
                     </div>
                     <div class="response">
                         <select id="place" name="place">
+                            <option value="-">-</option>
                             <option value="normalni">Normální</option>
                             <option value="suche">Suché</option>
                             <option value="suche">Vlhké</option>
@@ -181,6 +187,7 @@
                     </div>
                     <div class="response">
                         <select id="ucel" name="ucel">
+                            <option value="-">-</option>
                             <option value="transportni">Transportní</option>
                             <option value="stacionarni">Stacionární</option>
                             <option value="kombinace">Kombinace</option>
@@ -188,21 +195,343 @@
                         <span class="unit"></span>
                     </div>
                     <div class="description">
-                        <span>Vyberte, zda bude zásobnák trvale v místě, nebo bude sloužit k přepravě, nebo bude naplněný přivezen a prázdný odvezen</span>
+                        <span>Vyberte, zda bude zásobník trvale v místě, nebo bude sloužit k přepravě, nebo bude naplněný přivezen a prázdný odvezen</span>
                     </div>
                 </div>
 
+                <div class="input-container">
+                    <div class="question">
+                        <label for="dispecink">Dispečink:</label>
+                    </div>
+                    <div class="response">
+                        <select id="dispecink" name="dispecink">
+                            <option value="-">-</option>
+                            <option value="vzdalenerizeni">Vzdálené řízení</option>
+                            <option value="dohled">Dohled</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda chcete realizovat vzdálené dispečerské pracoviště</span>
+                    </div>
+                </div>
 
                 <div class="input-container">
-                    <input type="submit" value="Poptat cenu">
+                    <div class="question">
+                        <label for="automatizace">Úroveň automatizace:</label>
+                    </div>
+                    <div class="response">
+                        <select id="automatizace" name="automatizace">
+                            <option value="-">-</option>
+                            <option value="monitoring">Monitoring</option>
+                            <option value="rizeni">Řízení</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda chcete realizovat vzdálené dispečerské pracoviště</span>
+                    </div>
                 </div>
-            </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="dispecinkHW">Dispečink HW:</label>
+                    </div>
+                    <div class="response">
+                        <select id="automatizace" name="automatizace">
+                            <option value="-">-</option>
+                            <option value="pc">PC</option>
+                            <option value="server">Server</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda chcete vybavit dispečerské pracoviště hardwarem</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="komunikace">Vzdálená komunikace:</label>
+                    </div>
+                    <div class="response">
+                        <select id="komunikace" name="komunikace">
+                            <option value="-">-</option>
+                            <option value="lan">LAN</option>
+                            <option value="antena">Anténa</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte způsob komunikace s dispečerským pracovištěm</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="lokalizace">Lokalizace kontejnerů pomoci GPS:</label>
+                    </div>
+                    <div class="response">
+                        <select id="komunikace" name="komunikace">
+                            <option value="-">-</option>
+                            <option value="ano">Ano</option>
+                            <option value="antena">Ne</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda chcete sledovat polohu zásobníku</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="lautomatizace">Lokální automatizace:</label>
+                    </div>
+                    <div class="response">
+                        <select id="laut" name="laut">
+                            <option value="-">-</option>
+                            <option value="plc">PLC</option>
+                            <option value="op">OP</option>
+                            <option value="tablet">Tablet</option>
+                            <option value="only">Pouze vyvedení signálů</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda chcete vybavit zásobník automatizační technilkou</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="baterie">Baterie 2x142 Ah:</label>
+                    </div>
+                    <div class="response">
+                        <select id="baterie" name="baterie">
+                            <option value="-">-</option>
+                            <option value="ano">Ano</option>
+                            <option value="antena">Ne</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda chcete sledovat polohu zásobníku</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="osvetleni">Osvětlení:</label>
+                    </div>
+                    <div class="response">
+                        <select id="osvetleni" name="osvetleni">
+                            <option value="-">-</option>
+                            <option value="predloha">Předloha</option>
+                            <option value="antena">Rozváděč</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte zda chcete osvětlení zásobníků a jakých částí</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="tepkomf">Teplotní komfort:</label>
+                    </div>
+                    <div class="response">
+                        <select id="tepkomf" name="tepkomf">
+                            <option value="-">-</option>
+                            <option value="vytapeni">Vytápění</option>
+                            <option value="chlazeni">Chlazení</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda požadujete vytápět či chladit vnitřní prostor zásoníku</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="mp">Měření průtoků hmotnostním průtokoměrem:</label>
+                    </div>
+                    <div class="response">
+                        <select id="mp" name="mp">
+                            <option value="-">-</option>
+                            <option value="ano">Ano</option>
+                            <option value="ne">Ne</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda požadujete přesně měřit vydané množství plynu - pro účely fakturace apod.</span>
+                    </div>
+                </div>
+
+                
+                <div class="input-container">
+                    <div class="question">
+                        <label for="unik">Senzor úniku H2:</label>
+                    </div>
+                    <div class="response">
+                        <select id="unik" name="unik">
+                            <option value="-">-</option>
+                            <option value="ano">Ano</option>
+                            <option value="ne">Ne</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="sz">Snímač zaplavení:</label>
+                    </div>
+                    <div class="response">
+                        <select id="sz" name="sz">
+                            <option value="-">-</option>
+                            <option value="ano">Ano</option>
+                            <option value="ne">Ne</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="ak">Akcelerometr pro detekci otřesů (i při krádeži):</label>
+                    </div>
+                    <div class="response">
+                        <select id="ak" name="ak">
+                            <option value="-">-</option>
+                            <option value="ano">Ano</option>
+                            <option value="ne">Ne</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="ps">Přístupový systém:</label>
+                    </div>
+                    <div class="response">
+                        <select id="ps" name="ps">
+                            <option value="-">-</option>
+                            <option value="kod">Kód</option>
+                            <option value="oblicej">Obličej</option>
+                            <option value="otiskprstu">Otisk prstu</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="pcidlo">Pohybové čidlo:</label>
+                    </div>
+                    <div class="response">
+                        <select id="pcidlo" name="pcidlo">
+                            <option value="-">-</option>
+                            <option value="ano">Ano</option>
+                            <option value="ne">Ne</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <div class="question">
+                        <label for="ks">Kamerový systém:</label>
+                    </div>
+                    <div class="response">
+                        <select id="ks" name="ks">
+                            <option value="-">-</option>
+                            <option value="predloha">Předloha</option>
+                            <option value="rozvadec">Rozváděč</option>
+                            <option value="okoli">Okoli</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="ks">Kamerový systém:</label>
+                    </div>
+                    <div class="response">
+                        <select id="ks" name="ks">
+                            <option value="-">-</option>
+                            <option value="predloha">Předloha</option>
+                            <option value="rozvadec">Rozváděč</option>
+                            <option value="okoli">Okoli</option>
+                        </select>
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
+                    </div>
+                </div>
+
+                
+                <div class="input-container">
+                    <div class="question">
+                        <label for="info">Doplňující informace:</label>
+                     </div>
+                    <div class="response">
+                        <input type="text" id="info" name="info">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span></span>
+                    </div>
+                    </div>
+                    <div class="input-container">
+                        <input type="submit" value="Poptat cenu">
+                    </div>
         </form>
     </main>
 
     <footer>
         <p>&copy; 2023 Smart kontejner. All rights reserved.</p>
     </footer>
+
+    <!-- HTML для модального окна -->
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <!-- Здесь разместите форму для ввода данных клиента -->
+        <form id="myForm">
+            <!-- Ваши поля для ввода данных здесь -->
+            <input type="text" id="name" name="name" placeholder="Ваше имя">
+            <!-- Другие поля для ввода данных... -->
+            <input type="submit" value="Отправить">
+        </form>
+    </div>
+</div>
+
+
 </body>
 </html>
 
