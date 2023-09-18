@@ -150,6 +150,20 @@
                 </div>
 
                 <div class="input-container">
+                    <div class="question">
+                        <label for="us">Umístění (stát):</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="us" name="us">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte zemi, kde bude zásobník používán</span>
+                    </div>
+                </div>
+
+
+                <div class="input-container">
 
                     <div class="question">
                            <label for="prostredi">Vyberte prostředí umístění:</label>
@@ -173,7 +187,7 @@
                         <label for="teplota">Teplota okolí (rozpětí):</label>
                     </div>
                     <div class="response">
-                        <input type="number" id="tempreture" name="tempreture">
+                        <input type="text" id="tempreture" name="tempreture">
                         <span class="unit">st.C</span>
                     </div>
                     <div class="description">
@@ -186,10 +200,13 @@
                         <label for="ucel">Účel:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="ucelInput" name="ucel">
+                        <div class="button-group">
                         <div class="option-button" data-value="transportni">Transportní</div>
                         <div class="option-button" data-value="stacionarni">Stacionární</div>
                         <div class="option-button" data-value="kombinace">Kombinace</div>
                     </div>
+                </div>
                     <div class="description">
                         <span>Vyberte, zda bude zásobník trvale v místě, nebo bude sloužit k přepravě, nebo bude naplněný přivezen a prázdný odvezen</span>
                     </div>
@@ -200,9 +217,11 @@
                         <label for="dispecink">Dispečink:</label>
                     </div>
                     <div class="response">
-                        <div class="response">
+                        <input type="hidden" id="dispecinkInput" name="dispecink">
+                        <div class="button-group">
                             <div class="option-button" data-value="vzdalenerizeni">Vzdálené řízení</div>
                             <div class="option-button" data-value="dohled">Dohled</div>
+                            <div class="option-button" data-value="nic">Nic</div>                          
                         </div>
                     </div>
                     <div class="description">
@@ -215,9 +234,12 @@
                         <label for="automatizace">Úroveň automatizace:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="dispecinkInput" name="dispecink">
+                        <div class="button-group">
                         <div class="option-button" data-value="monitoring">Monitoring</div>
                         <div class="option-button" data-value="rizeni">Řízení</div>
-                
+                        <div class="option-button" data-value="nic">Nic</div>
+                        </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda chcete realizovat vzdálené dispečerské pracoviště</span>
@@ -229,8 +251,12 @@
                         <label for="dispecinkHW">Dispečink HW:</label>
                     </div>
                     <div class="response">
-                        <div class="option-button" data-value="pc">PC</div>
-                        <div class="option-button" data-value="server">Server</div>                
+                        <input type="hidden" id="dispecinkInput" name="dispecink">
+                            <div class="button-group">
+                            <div class="option-button" data-value="pc">PC</div>
+                            <div class="option-button" data-value="server">Server</div>
+                            <div class="option-button" data-value="nic">Nic</div>                
+                        </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda chcete vybavit dispečerské pracoviště hardwarem</span>
@@ -242,8 +268,12 @@
                         <label for="komunikace">Vzdálená komunikace:</label>
                     </div>
                     <div class="response">
-                        <div class="option-button" data-value="lan">LAN</div>
-                        <div class="option-button" data-value="antena">Anténa</div>
+                        <input type="hidden" id="komunikaceInput" name="komunikace">
+                            <div class="button-group">
+                                <div class="option-button" data-value="lan">LAN</div>
+                                <div class="option-button" data-value="antena">Anténa</div>
+                                <div class="option-button" data-value="nic">Nic</div>
+                            </div>
                     </div>
                     <div class="description">
                         <span>Vyberte způsob komunikace s dispečerským pracovištěm</span>
@@ -255,9 +285,12 @@
                         <label for="lokalizace">Lokalizace kontejnerů pomoci GPS:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="lokalizaceInput" name="lokalizace">
+                            <div class="button-group">
                         <div class="option-button" data-value="ano">Ano</div>
                         <div class="option-button" data-value="ne">Ne</div>
                     </div>
+                </div>
                     <div class="description">
                         <span>Vyberte, zda chcete sledovat polohu zásobníku</span>
                     </div>
@@ -268,11 +301,15 @@
                         <label for="lautomatizace">Lokální automatizace:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="lautomatizaceInput" name="lautomatizace">
+                        <div class="button-group">
                         <div class="option-button" data-value="plc">PLC</div>
                         <div class="option-button" data-value="op">OP</div>
                         <div class="option-button" data-value="tablet">Tablet</div>
-                        <div class="option-button" data-value="only">Pouze vyvedení signálů</div>                
+                        <div class="option-button" data-value="only">Pouze vyvedení signálů</div>   
+                        <div class="option-button" data-value="nic">Nic</div>             
                     </div>
+                </div>
                     <div class="description">
                         <span>Vyberte, zda chcete vybavit zásobník automatizační technilkou</span>
                     </div>
@@ -283,9 +320,12 @@
                         <label for="baterie">Baterie 2x142 Ah:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="baterieInput" name="baterie">
+                            <div class="button-group">
                         <div class="option-button" data-value="ano">Ano</div>
                         <div class="option-button" data-value="ne">Ne</div>
                     </div>
+                </div>
                     <div class="description">
                         <span>Vyberte, zda chcete sledovat polohu zásobníku</span>
                     </div>
@@ -296,9 +336,13 @@
                         <label for="osvetleni">Osvětlení:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="osvetleniInput" name="osvetleni">
+                        <div class="button-group">
                         <div class="option-button" value="Předloha">Předloha</div>
                         <div class="option-button" value="Rozváděč">Rozváděč</div>
-                        <div class="option-button" value="Okoli">Okoli</div>      
+                        <div class="option-button" value="Okoli">Okoli</div>
+                        <div class="option-button" data-value="nic">Nic</div>      
+                    </div>
                     </div>
                     <div class="description">
                         <span>Vyberte zda chcete osvětlení zásobníků a jakých částí</span>
@@ -310,9 +354,12 @@
                         <label for="tepkomf">Teplotní komfort:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="tepkomfInput" name="tepkomf">
+                        <div class="button-group">
                         <div class="option-button" value="Vytápění">Vytápění</div>
                         <div class="option-button" value="Chlazení">Chlazení</div>
-
+                        <div class="option-button" data-value="nic">Nic</div>
+                    </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda požadujete vytápět či chladit vnitřní prostor zásoníku</span>
@@ -324,8 +371,11 @@
                         <label for="mp">Měření průtoků hmotnostním průtokoměrem:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="mpInput" name="mp">
+                        <div class="button-group">
                         <div class="option-button" data-value="ano">Ano</div>
                         <div class="option-button" data-value="ne">Ne</div>
+                    </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda požadujete přesně měřit vydané množství plynu - pro účely fakturace apod.</span>
@@ -338,8 +388,11 @@
                         <label for="unik">Senzor úniku H2:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="unikInput" name="unik">
+                        <div class="button-group">
                         <div class="option-button" data-value="ano">Ano</div>
                         <div class="option-button" data-value="ne">Ne</div>
+                    </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
@@ -351,8 +404,11 @@
                         <label for="sz">Snímač zaplavení:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="szInput" name="sz">
+                        <div class="button-group">
                         <div class="option-button" data-value="ano">Ano</div>
                         <div class="option-button" data-value="ne">Ne</div>
+                    </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
@@ -364,8 +420,11 @@
                         <label for="ak">Akcelerometr pro detekci otřesů (i při krádeži):</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="akInput" name="ak">
+                        <div class="button-group">
                         <div class="option-button" data-value="ano">Ano</div>
                         <div class="option-button" data-value="ne">Ne</div>
+                    </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
@@ -377,10 +436,13 @@
                         <label for="ps">Přístupový systém:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="psInput" name="ps">
+                        <div class="button-group">
                         <div class="option-button" data-value="kod">Kód</div>
                         <div class="option-button" data-value="oblicej">Obličej</div>
                         <div class="option-button" data-value="otiskprstu">Otisk prstu</div>
                         <div class="option-button" data-value="-">Nic</div>
+                    </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
@@ -392,8 +454,11 @@
                         <label for="pcidlo">Pohybové čidlo:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="pcidloInput" name="pcidlo">
+                        <div class="button-group">
                         <div class="option-button" data-value="ano">Ano</div>
                         <div class="option-button" data-value="ne">Ne</div>
+                    </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
@@ -405,12 +470,100 @@
                         <label for="ks">Kamerový systém:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="ksInput" name="ks">
+                        <div class="button-group">
                         <div class="option-button" value="Předloha">Předloha</div>
                         <div class="option-button" value="Rozváděč">Rozváděč</div>
-                        <div class="option-button" value="Okoli">Okoli</div>   
+                        <div class="option-button" value="Okoli">Okoli</div>
+                        <div class="option-button" data-value="nic">Nic</div>   
+                    </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda požadujete tento bezpečnostní prvek</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="clenenisekci">Požadavek na členění sekcí:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="clenenisekci" name="clenenisekci">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte, zda máte speciální požadavky na jednotlivé sekce</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="bp">Bezpečnostní prvky:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="bpInput" name="bp">
+                        <div class="button-group">
+                        <div class="option-button" value="pv">Pojistný ventil</div>
+                        <div class="option-button" value="tp">Teplotní pojistka</div>
+                        <div class="option-button" data-value="nic">Nic</div>   
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span></span>
+                    </div>
+                </div>
+
+               
+                <div class="input-container">
+                    <div class="question">
+                        <label for="vstup">Způsob připojení VSTUP:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="vstup" name="vstup">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte – např. závit, hadice apod.</span>
+                    </div>
+                </div>
+
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="vystup">Způsob připojení VÝSTUP:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="vystup" name="vystup">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte – např. závit, hadice apod.</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="stohovani">Stohování:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="stohovani" name="stohovani">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte, zda bude možno (nebo požadujete) jednotlivé kontejnery tvořící zásobník stohovat</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="msz">Manipulace se zásobníkem:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="msz" name="msz">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte předpokládané manipulační zařízení – např. jeřáb, vysokozdvižný vozík apod. </span>
                     </div>
                 </div>
 

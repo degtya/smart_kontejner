@@ -1,4 +1,40 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const totalCapacityInput = document.getElementById('totalCapacity');
+    const totalWaterVolumeInput = document.getElementById('totalWaterVolume');
+    const totalCapacityPlaceholder = 'Uveďte, jaké maximální množství (hmotnost) plynu chcete uskladnit';
+    const totalWaterVolumePlaceholder = 'Požadujete-li určitý vodní objem';
+
+    totalCapacityInput.addEventListener('input', function () {
+        const placeholderText = 'bude spočítán podle vybrané kapacity';
+
+        if (this.value !== '') {
+            totalWaterVolumeInput.style.visibility = 'hidden'; // Скрываем элементы ввода
+            totalWaterVolumeInput.nextElementSibling.style.visibility = 'hidden'; // Скрываем единицы измерения
+            totalWaterVolumeInput.value = ''; // Очищаем его значение
+            totalWaterVolumeInput.setAttribute('placeholder', placeholderText); // Устанавливаем текст placeholder
+        } else {
+            totalWaterVolumeInput.style.visibility = 'visible'; // Показываем элементы ввода
+            totalWaterVolumeInput.nextElementSibling.style.visibility = 'visible'; // Показываем единицы измерения
+            totalWaterVolumeInput.removeAttribute('placeholder'); // Удаляем текст placeholder
+        }
+    });
+
+    totalWaterVolumeInput.addEventListener('input', function () {
+        const placeholderText = 'Celková kapacita bude spočítána podle vybraného objemu';
+
+        if (this.value !== '') {
+            totalCapacityInput.style.visibility = 'hidden'; // Скрываем элементы ввода
+            totalCapacityInput.nextElementSibling.style.visibility = 'hidden'; // Скрываем единицы измерения
+            totalCapacityInput.value = ''; // Очищаем его значение
+            totalCapacityInput.setAttribute('placeholder', placeholderText); // Устанавливаем текст placeholder
+        } else {
+            totalCapacityInput.style.visibility = 'visible'; // Показываем элементы ввода
+            totalCapacityInput.nextElementSibling.style.visibility = 'visible'; // Показываем единицы измерения
+            totalCapacityInput.removeAttribute('placeholder'); // Удаляем текст placeholder
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', function () {
     const questionContainers = document.querySelectorAll('.input-container');
 
     questionContainers.forEach(container => {
@@ -24,4 +60,6 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
+    
 });
+
