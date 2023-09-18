@@ -61,7 +61,7 @@ body, h1, h2, p {
   
  
 img {
-  max-width: 90%;
+  width: 90%;
  
 }
 
@@ -129,7 +129,7 @@ img {
   
   .input-container .description {
     flex: 5;
-    font-size: 14px;
+    font-size: 15px;
     color: #999;
     text-align: left;
   }
