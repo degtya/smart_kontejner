@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const answerInput = document.getElementById("answer");
     const totalCapacityInput = document.getElementById('totalCapacity');
     const totalWaterVolumeInput = document.getElementById('totalWaterVolume');
     const totalCapacityPlaceholder = 'Uveďte, jaké maximální množství (hmotnost) plynu chcete uskladnit';
@@ -12,10 +13,24 @@ document.addEventListener('DOMContentLoaded', function () {
             totalWaterVolumeInput.nextElementSibling.style.visibility = 'hidden'; // Скрываем единицы измерения
             totalWaterVolumeInput.value = ''; // Очищаем его значение
             totalWaterVolumeInput.setAttribute('placeholder', placeholderText); // Устанавливаем текст placeholder
+            
+            console.log('placehoder', placeholderText);
+
+            // Скрываем вопрос и описание
+            const questionContainer = totalWaterVolumeInput.closest('.input-container');
+            const question = questionContainer.querySelector('.question');
+            question.style.display = 'none';
+            questionContainer.querySelector('.description').style.display = 'none';
         } else {
             totalWaterVolumeInput.style.visibility = 'visible'; // Показываем элементы ввода
             totalWaterVolumeInput.nextElementSibling.style.visibility = 'visible'; // Показываем единицы измерения
             totalWaterVolumeInput.removeAttribute('placeholder'); // Удаляем текст placeholder
+
+            // Восстанавливаем вопрос и описание
+            const questionContainer = totalWaterVolumeInput.closest('.input-container');
+            const question = questionContainer.querySelector('.question');
+            question.style.display = 'block';
+            questionContainer.querySelector('.description').style.display = 'block';
         }
     });
 
@@ -27,14 +42,26 @@ document.addEventListener('DOMContentLoaded', function () {
             totalCapacityInput.nextElementSibling.style.visibility = 'hidden'; // Скрываем единицы измерения
             totalCapacityInput.value = ''; // Очищаем его значение
             totalCapacityInput.setAttribute('placeholder', placeholderText); // Устанавливаем текст placeholder
+            console.log('placehoder', placeholderText);
+
+            // Скрываем вопрос и описание
+            const questionContainer = totalCapacityInput.closest('.input-container');
+            const question = questionContainer.querySelector('.question');
+            question.style.display = 'none';
+            questionContainer.querySelector('.description').style.display = 'none';
         } else {
             totalCapacityInput.style.visibility = 'visible'; // Показываем элементы ввода
             totalCapacityInput.nextElementSibling.style.visibility = 'visible'; // Показываем единицы измерения
             totalCapacityInput.removeAttribute('placeholder'); // Удаляем текст placeholder
+
+            // Восстанавливаем вопрос и описание
+            const questionContainer = totalCapacityInput.closest('.input-container');
+            const question = questionContainer.querySelector('.question');
+            question.style.display = 'block';
+            questionContainer.querySelector('.description').style.display = 'block';
         }
     });
-});
-document.addEventListener('DOMContentLoaded', function () {
+    
     const questionContainers = document.querySelectorAll('.input-container');
 
     questionContainers.forEach(container => {
@@ -60,6 +87,8 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         });
     });
-    
-});
+  
 
+      
+
+});

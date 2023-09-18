@@ -27,7 +27,7 @@
     </header> -->
 
     <main>
-        <form>
+        <form onsubmit="return false;">
             <div class="container">
                 <div class="input-container">
                     <div class="question">
@@ -135,6 +135,90 @@
 
                 <div class="input-container">
                     <div class="question">
+                        <label for="clenenisekci">Požadavek na členění sekcí:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="clenenisekci" name="clenenisekci">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte, zda máte speciální požadavky na jednotlivé sekce</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="bp">Bezpečnostní prvky:</label>
+                    </div>
+                    <div class="response">
+                        <input type="hidden" id="bpInput" name="bp">
+                        <div class="button-group">
+                        <div class="option-button" value="pv">Pojistný ventil</div>
+                        <div class="option-button" value="tp">Teplotní pojistka</div>
+                        <div class="option-button" data-value="nic">Nic</div>   
+                    </div>
+                    </div>
+                    <div class="description">
+                        <span></span>
+                    </div>
+                </div>
+
+               
+                <div class="input-container">
+                    <div class="question">
+                        <label for="vstup">Způsob připojení VSTUP:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="vstup" name="vstup">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte – např. závit, hadice apod.</span>
+                    </div>
+                </div>
+
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="vystup">Způsob připojení VÝSTUP:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="vystup" name="vystup">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte – např. závit, hadice apod.</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="stohovani">Stohování:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="stohovani" name="stohovani">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte, zda bude možno (nebo požadujete) jednotlivé kontejnery tvořící zásobník stohovat</span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
+                        <label for="msz">Manipulace se zásobníkem:</label>
+                    </div>
+                    <div class="response">
+                        <input type="text" id="msz" name="msz">
+                        <span class="unit"></span>
+                    </div>
+                    <div class="description">
+                        <span>Uveďte předpokládané manipulační zařízení – např. jeřáb, vysokozdvižný vozík apod. </span>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="question">
                         <label for="place">Vyberte misto umístění:</label>
                     </div>
                     <div class="response">
@@ -234,7 +318,7 @@
                         <label for="automatizace">Úroveň automatizace:</label>
                     </div>
                     <div class="response">
-                        <input type="hidden" id="dispecinkInput" name="dispecink">
+                        <input type="hidden" id="automatizaceInput" name="automatizace">
                         <div class="button-group">
                         <div class="option-button" data-value="monitoring">Monitoring</div>
                         <div class="option-button" data-value="rizeni">Řízení</div>
@@ -251,7 +335,7 @@
                         <label for="dispecinkHW">Dispečink HW:</label>
                     </div>
                     <div class="response">
-                        <input type="hidden" id="dispecinkInput" name="dispecink">
+                        <input type="hidden" id="dispecinkHWInput" name="dispecinkHW">
                             <div class="button-group">
                             <div class="option-button" data-value="pc">PC</div>
                             <div class="option-button" data-value="server">Server</div>
@@ -483,89 +567,7 @@
                     </div>
                 </div>
 
-                <div class="input-container">
-                    <div class="question">
-                        <label for="clenenisekci">Požadavek na členění sekcí:</label>
-                    </div>
-                    <div class="response">
-                        <input type="text" id="clenenisekci" name="clenenisekci">
-                        <span class="unit"></span>
-                    </div>
-                    <div class="description">
-                        <span>Uveďte, zda máte speciální požadavky na jednotlivé sekce</span>
-                    </div>
-                </div>
 
-                <div class="input-container">
-                    <div class="question">
-                        <label for="bp">Bezpečnostní prvky:</label>
-                    </div>
-                    <div class="response">
-                        <input type="hidden" id="bpInput" name="bp">
-                        <div class="button-group">
-                        <div class="option-button" value="pv">Pojistný ventil</div>
-                        <div class="option-button" value="tp">Teplotní pojistka</div>
-                        <div class="option-button" data-value="nic">Nic</div>   
-                    </div>
-                    </div>
-                    <div class="description">
-                        <span></span>
-                    </div>
-                </div>
-
-               
-                <div class="input-container">
-                    <div class="question">
-                        <label for="vstup">Způsob připojení VSTUP:</label>
-                    </div>
-                    <div class="response">
-                        <input type="text" id="vstup" name="vstup">
-                        <span class="unit"></span>
-                    </div>
-                    <div class="description">
-                        <span>Uveďte – např. závit, hadice apod.</span>
-                    </div>
-                </div>
-
-
-                <div class="input-container">
-                    <div class="question">
-                        <label for="vystup">Způsob připojení VÝSTUP:</label>
-                    </div>
-                    <div class="response">
-                        <input type="text" id="vystup" name="vystup">
-                        <span class="unit"></span>
-                    </div>
-                    <div class="description">
-                        <span>Uveďte – např. závit, hadice apod.</span>
-                    </div>
-                </div>
-
-                <div class="input-container">
-                    <div class="question">
-                        <label for="stohovani">Stohování:</label>
-                    </div>
-                    <div class="response">
-                        <input type="text" id="stohovani" name="stohovani">
-                        <span class="unit"></span>
-                    </div>
-                    <div class="description">
-                        <span>Uveďte, zda bude možno (nebo požadujete) jednotlivé kontejnery tvořící zásobník stohovat</span>
-                    </div>
-                </div>
-
-                <div class="input-container">
-                    <div class="question">
-                        <label for="msz">Manipulace se zásobníkem:</label>
-                    </div>
-                    <div class="response">
-                        <input type="text" id="msz" name="msz">
-                        <span class="unit"></span>
-                    </div>
-                    <div class="description">
-                        <span>Uveďte předpokládané manipulační zařízení – např. jeřáb, vysokozdvižný vozík apod. </span>
-                    </div>
-                </div>
 
                 <div class="input-container">
                     <div class="question">
@@ -580,32 +582,21 @@
                     </div>
                     </div>
                     <div class="input-container">
-                        <input type="submit" value="Poptat cenu">
+                        <input type="submit"  value="Poptat cenu" >
                     </div>
         </form>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Smart kontejner. All rights reserved.</p>
-    </footer>
-
-    <!-- HTML для модального окна -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <!-- Здесь разместите форму для ввода данных клиента -->
-        <form id="myForm">
-            <!-- Ваши поля для ввода данных здесь -->
-            <input type="text" id="name" name="name" placeholder="Ваше имя">
-            <!-- Другие поля для ввода данных... -->
-            <input type="submit" value="Отправить">
-        </form>
-    </div>
-</div>
+   
+   </main>
 
 
     <script src="script.js"></script>
 
 </body>
+
+
+<footer>
+    <p>&copy; 2023 Smart kontejner. All rights reserved.</p>
+</footer>
+
 </html>
 
