@@ -138,12 +138,11 @@
                         <label for="place">Vyberte misto umístění:</label>
                     </div>
                     <div class="response">
-                        <select id="place" name="place">
-                            <option value="-">-</option>
-                            <option value="venku">Venku</option>
-                            <option value="uvnitr">Uvnitř</option>
-                        </select>
-                        <span class="unit"></span>
+                        <input type="hidden" id="placeInput" name="place">
+                        <div class="button-group">
+                            <button type="button" class="option-button" data-value="venku">Venku</button>
+                            <button type="button" class="option-button" data-value="uvnitr">Uvnitř</button>
+                        </div>
                     </div>
                     <div class="description">
                         <span></span>
@@ -155,13 +154,9 @@
                         <label for="prostredi">Vyberte prostředí umístění:</label>
                     </div>
                     <div class="response">
-                        <select id="place" name="place">
-                            <option value="-">-</option>
-                            <option value="normalni">Normální</option>
-                            <option value="suche">Suché</option>
-                            <option value="suche">Vlhké</option>
-                        </select>
-                        <span class="unit"></span>
+                        <div class="option-button" data-value="normalni">Normální</div>
+                        <div class="option-button" data-value="suche">Suché</div>
+                        <div class="option-button" data-value="vlhké">Vlhké</div>
                     </div>
                     <div class="description">
                         <span></span>
@@ -186,13 +181,9 @@
                         <label for="ucel">Účel:</label>
                     </div>
                     <div class="response">
-                        <select id="ucel" name="ucel">
-                            <option value="-">-</option>
-                            <option value="transportni">Transportní</option>
-                            <option value="stacionarni">Stacionární</option>
-                            <option value="kombinace">Kombinace</option>
-                        </select>
-                        <span class="unit"></span>
+                        <div class="option-button" data-value="transportni">Transportní</div>
+                        <div class="option-button" data-value="stacionarni">Stacionární</div>
+                        <div class="option-button" data-value="kombinace">Kombinace</div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda bude zásobník trvale v místě, nebo bude sloužit k přepravě, nebo bude naplněný přivezen a prázdný odvezen</span>
@@ -204,12 +195,10 @@
                         <label for="dispecink">Dispečink:</label>
                     </div>
                     <div class="response">
-                        <select id="dispecink" name="dispecink">
-                            <option value="-">-</option>
-                            <option value="vzdalenerizeni">Vzdálené řízení</option>
-                            <option value="dohled">Dohled</option>
-                        </select>
-                        <span class="unit"></span>
+                        <div class="response">
+                            <div class="option-button" data-value="vzdalenerizeni">Vzdálené řízení</div>
+                            <div class="option-button" data-value="dohled">Dohled</div>
+                        </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda chcete realizovat vzdálené dispečerské pracoviště</span>
@@ -221,12 +210,9 @@
                         <label for="automatizace">Úroveň automatizace:</label>
                     </div>
                     <div class="response">
-                        <select id="automatizace" name="automatizace">
-                            <option value="-">-</option>
-                            <option value="monitoring">Monitoring</option>
-                            <option value="rizeni">Řízení</option>
-                        </select>
-                        <span class="unit"></span>
+                        <div class="option-button" data-value="monitoring">Monitoring</div>
+                        <div class="option-button" data-value="rizeni">Řízení</div>
+                
                     </div>
                     <div class="description">
                         <span>Vyberte, zda chcete realizovat vzdálené dispečerské pracoviště</span>
@@ -238,12 +224,8 @@
                         <label for="dispecinkHW">Dispečink HW:</label>
                     </div>
                     <div class="response">
-                        <select id="automatizace" name="automatizace">
-                            <option value="-">-</option>
-                            <option value="pc">PC</option>
-                            <option value="server">Server</option>
-                        </select>
-                        <span class="unit"></span>
+                        <div class="option-button" data-value="pc">PC</div>
+                        <div class="option-button" data-value="server">Server</div>                
                     </div>
                     <div class="description">
                         <span>Vyberte, zda chcete vybavit dispečerské pracoviště hardwarem</span>
@@ -255,12 +237,8 @@
                         <label for="komunikace">Vzdálená komunikace:</label>
                     </div>
                     <div class="response">
-                        <select id="komunikace" name="komunikace">
-                            <option value="-">-</option>
-                            <option value="lan">LAN</option>
-                            <option value="antena">Anténa</option>
-                        </select>
-                        <span class="unit"></span>
+                        <div class="option-button" data-value="lan">LAN</div>
+                        <div class="option-button" data-value="antena">Anténa</div>
                     </div>
                     <div class="description">
                         <span>Vyberte způsob komunikace s dispečerským pracovištěm</span>
@@ -275,7 +253,7 @@
                         <select id="komunikace" name="komunikace">
                             <option value="-">-</option>
                             <option value="ano">Ano</option>
-                            <option value="antena">Ne</option>
+                            <option value="ne">Ne</option>
                         </select>
                         <span class="unit"></span>
                     </div>
@@ -328,7 +306,8 @@
                         <select id="osvetleni" name="osvetleni">
                             <option value="-">-</option>
                             <option value="predloha">Předloha</option>
-                            <option value="antena">Rozváděč</option>
+                            <option value="rozvadec">Rozváděč</option>
+                            <option value="preadloharozvadec">Předloha a rozváděč</option>
                         </select>
                         <span class="unit"></span>
                     </div>
@@ -346,6 +325,7 @@
                             <option value="-">-</option>
                             <option value="vytapeni">Vytápění</option>
                             <option value="chlazeni">Chlazení</option>
+                            <option value="vytapachlaz">Vytápění a chlazení</option>
                         </select>
                         <span class="unit"></span>
                     </div>
@@ -531,6 +511,8 @@
     </div>
 </div>
 
+
+    <script src="script.js"></script>
 
 </body>
 </html>

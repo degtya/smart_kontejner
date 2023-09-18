@@ -172,6 +172,27 @@ img {
     color: #000000;
     margin: 0;
   }
+  .option-button {
+    background-color: #f0f0f0; /* Цвет фона обычных кнопок */
+    color: #333; /* Цвет текста на обычных кнопках */
+    border: none;
+    border-radius: 20px; /* Радиус закругления углов (делайте больше для более округлых углов) */
+    padding: 15px 30px; /* Отступы внутри кнопки (высота x2 и ширина x2) */
+    font-size: 16px; /* Размер шрифта */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Плавное изменение цветов при наведении */
+}
+.option-button.large {
+  padding: 20px 40px; /* Увеличенные отступы внутри кнопки */
+  font-size: 20px; /* Увеличенный размер шрифта */
+}
+
+  /* Добавьте этот код в ваш CSS файл */
+.option-button.selected {
+  background-color: #2c2c2c; /* Цвет фона выбранной кнопки */
+  color: #fff; /* Цвет текста на выбранной кнопке */
+}
+
   
   
   /* Footer styles */
