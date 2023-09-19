@@ -185,10 +185,7 @@ img {
     transition: background-color 0.3s ease, color 0.3s ease;/* Плавное изменение цветов при наведении */
 }
 
- {
-  display: none;
-}
-  /* Добавьте этот код в ваш CSS файл */
+
 .option-button.selected {
   background-color: #ffffff; /* Цвет фона выбранной кнопки */
   color: #000000; /* Цвет текста на выбранной кнопке */

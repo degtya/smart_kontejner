@@ -297,16 +297,11 @@
                         <label for="dispecink">Dispečink:</label>
                     </div>
                     <div class="response">
+                        <input type="hidden" id="dispecinkInput" name="dispecink">
                         <div class="button-group">
-                            <label>
-                                <input type="checkbox" id="vzdalenerizeni" name="dispecink[]" value="vzdalenerizeni"> Vzdálené řízení
-                            </label>
-                            <label>
-                                <input type="checkbox" id="dohled" name="dispecink[]" value="dohled"> Dohled
-                            </label>
-                            <label>
-                                <input type="checkbox" id="nic" name="dispecink[]" value="nic"> Nic
-                            </label>
+                            <div class="option-button" data-value="vzdalenerizeni">Vzdálené řízení</div>
+                            <div class="option-button" data-value="dohled">Dohled</div>
+                            <div class="option-button" data-value="nic">Nic</div>                          
                         </div>
                     </div>
                     <div class="description">
