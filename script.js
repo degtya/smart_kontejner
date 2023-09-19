@@ -88,7 +88,19 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
   
+    
+    const nicCheckbox = document.getElementById("nic");
+    const otherCheckboxes = document.querySelectorAll('[name="dispecink[]"]:not(#nic)');
 
-      
+    // Добавляем обработчик события для чекбокса "Nic"
+    nicCheckbox.addEventListener("change", function () {
+        // Если "Nic" отмечен, снимаем галочки с других вариантов ответа
+        if (nicCheckbox.checked) {
+            otherCheckboxes.forEach((checkbox) => {
+                checkbox.checked = false;
+            });
+        }
+    });
+
 
 });

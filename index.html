@@ -22,10 +22,6 @@
 
     <img src="text.JPEG">
 
-    <!-- <header>
-        <h1>Vyberte parametry pro Váš SMART kontejner</h1>
-    </header> -->
-
     <main>
         <form onsubmit="return false;">
             <div class="container">
@@ -301,17 +297,23 @@
                         <label for="dispecink">Dispečink:</label>
                     </div>
                     <div class="response">
-                        <input type="hidden" id="dispecinkInput" name="dispecink">
                         <div class="button-group">
-                            <div class="option-button" data-value="vzdalenerizeni">Vzdálené řízení</div>
-                            <div class="option-button" data-value="dohled">Dohled</div>
-                            <div class="option-button" data-value="nic">Nic</div>                          
+                            <label>
+                                <input type="checkbox" id="vzdalenerizeni" name="dispecink[]" value="vzdalenerizeni"> Vzdálené řízení
+                            </label>
+                            <label>
+                                <input type="checkbox" id="dohled" name="dispecink[]" value="dohled"> Dohled
+                            </label>
+                            <label>
+                                <input type="checkbox" id="nic" name="dispecink[]" value="nic"> Nic
+                            </label>
                         </div>
                     </div>
                     <div class="description">
                         <span>Vyberte, zda chcete realizovat vzdálené dispečerské pracoviště</span>
                     </div>
                 </div>
+                
 
                 <div class="input-container">
                     <div class="question">

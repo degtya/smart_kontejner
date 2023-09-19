@@ -173,7 +173,7 @@ img {
     color: #000000;
     margin: 0;
   }
-  .option-button {
+  .option-button input[type="checkbox"], .option-button{
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -185,6 +185,9 @@ img {
     transition: background-color 0.3s ease, color 0.3s ease;/* Плавное изменение цветов при наведении */
 }
 
+ {
+  display: none;
+}
   /* Добавьте этот код в ваш CSS файл */
 .option-button.selected {
   background-color: #ffffff; /* Цвет фона выбранной кнопки */
@@ -205,47 +208,3 @@ img {
     color: #ffffff;
   }
   
-  /* Стили для основной страницы */
-
-
-/* Стили для кнопки открытия попапа */
-#openPopupButton {
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-}
-
-/* Стили для попапа (скрытого по умолчанию) */
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-  justify-content: center;
-  align-items: center;
-}
-
-.popup-content {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  text-align: center;
-  position: relative;
-}
-
-.close-popup-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-  color: #888;
-}
-
