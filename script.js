@@ -1,66 +1,217 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const answerInput = document.getElementById("answer");
-    const totalCapacityInput = document.getElementById('totalCapacity');
-    const totalWaterVolumeInput = document.getElementById('totalWaterVolume');
-    const totalCapacityPlaceholder = 'Uveďte, jaké maximální množství (hmotnost) plynu chcete uskladnit';
-    const totalWaterVolumePlaceholder = 'Požadujete-li určitý vodní objem';
 
-    totalCapacityInput.addEventListener('input', function () {
-        const placeholderText = 'bude spočítán podle vybrané kapacity';
 
-        if (this.value !== '') {
-            totalWaterVolumeInput.style.visibility = 'hidden'; // Скрываем элементы ввода
-            totalWaterVolumeInput.nextElementSibling.style.visibility = 'hidden'; // Скрываем единицы измерения
-            totalWaterVolumeInput.value = ''; // Очищаем его значение
-            totalWaterVolumeInput.setAttribute('placeholder', placeholderText); // Устанавливаем текст placeholder
-            
-            console.log('placehoder', placeholderText);
+/////////////////////////////  Часть с изменением полей обьема //////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-            // Скрываем вопрос и описание
-            const questionContainer = totalWaterVolumeInput.closest('.input-container');
-            const question = questionContainer.querySelector('.question');
-            question.style.display = 'none';
-            questionContainer.querySelector('.description').style.display = 'none';
-        } else {
-            totalWaterVolumeInput.style.visibility = 'visible'; // Показываем элементы ввода
-            totalWaterVolumeInput.nextElementSibling.style.visibility = 'visible'; // Показываем единицы измерения
-            totalWaterVolumeInput.removeAttribute('placeholder'); // Удаляем текст placeholder
+const totalCapacityInput = document.getElementById('totalCapacity');
+const totalWaterVolumeInput = document.getElementById('totalWaterVolume');
+const totalCapacityPlaceholder = 'Celková kapacita:';
+const totalWaterVolumePlaceholder = 'Celkový vodní objem:';
 
-            // Восстанавливаем вопрос и описание
-            const questionContainer = totalWaterVolumeInput.closest('.input-container');
-            const question = questionContainer.querySelector('.question');
-            question.style.display = 'block';
-            questionContainer.querySelector('.description').style.display = 'block';
+function hideQuestionAndDescription(inputElement, placeholderText) {
+    const questionElement = inputElement.closest('.input-container').querySelector('.question');
+    const descriptionElement = inputElement.closest('.input-container').querySelector('.description');
+
+    descriptionElement.style.display = 'none'; // Скрываем описание вопроса
+    inputElement.setAttribute('placeholder', placeholderText); // Устанавливаем текст placeholder
+    questionElement.textContent = placeholderText;
+}
+
+function showQuestionAndDescription(inputElement, placeholderText) {
+    const questionElement = inputElement.closest('.input-container').querySelector('.question');
+    const descriptionElement = inputElement.closest('.input-container').querySelector('.description');
+    
+    questionElement.style.display = 'block'; // Показываем вопрос
+    descriptionElement.style.display = 'block'; // Показываем описание вопроса
+    questionElement.textContent = placeholderText;
+    inputElement.removeAttribute('placeholder'); // Удаляем текст placeholder
+}
+
+totalCapacityInput.addEventListener('input', function () {
+    const placeholderText = 'Celkový vodní objem bude spočítán podle vybrané kapacity';
+
+    if (this.value !== '') {
+        totalWaterVolumeInput.style.visibility = 'hidden'; // Скрываем элементы ввода
+        totalWaterVolumeInput.nextElementSibling.style.visibility = 'hidden'; // Скрываем единицы измерения
+        totalWaterVolumeInput.value = ''; // Очищаем его значение
+       hideQuestionAndDescription(totalWaterVolumeInput, placeholderText); // Скрываем вопрос и описание вопроса и устанавливаем placeholder
+    } else {
+        totalWaterVolumeInput.style.visibility = 'visible'; // Показываем элементы ввода
+        totalWaterVolumeInput.nextElementSibling.style.visibility = 'visible'; // Показываем единицы измерения
+        showQuestionAndDescription(totalWaterVolumeInput, totalWaterVolumePlaceholder); // Показываем вопрос и описание вопроса и убираем placeholder
+    }
+});
+
+totalWaterVolumeInput.addEventListener('input', function () {
+    const placeholderText = 'Celková kapacita bude spočítána podle vybraného objemu';
+
+    if (this.value !== '') {
+        totalCapacityInput.style.visibility = 'hidden'; // Скрываем элементы ввода
+        totalCapacityInput.nextElementSibling.style.visibility = 'hidden'; // Скрываем единицы измерения
+        totalCapacityInput.value = ''; // Очищаем его значение
+        hideQuestionAndDescription(totalCapacityInput, placeholderText); // Скрываем вопрос и описание вопроса и устанавливаем placeholder
+    } else {
+        totalCapacityInput.style.visibility = 'visible'; // Показываем элементы ввода
+        totalCapacityInput.nextElementSibling.style.visibility = 'visible'; // Показываем единицы измерения
+        showQuestionAndDescription(totalCapacityInput, totalCapacityPlaceholder); // Показываем вопрос и описание вопроса и убираем placeholder
+    }
+});
+    
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////// Нажатия на кнопки  ///////////////////////////////////////////////////////////////////////////////////////////////////////////  
+
+
+// Получаем все кнопки для каждой группы
+const buttonGroups = document.querySelectorAll('.button-group');
+
+// Добавляем обработчик события клика для каждой группы
+buttonGroups.forEach(group => {
+    const optionButtons = group.querySelectorAll('.option-button');
+    
+    optionButtons.forEach(button => {
+        // Проверяем, добавлен ли уже обработчик события клика
+        if (!button.classList.contains('click-handler-added')) {
+            button.classList.add('click-handler-added'); // Добавляем класс для отслеживания добавления обработчика
+            button.addEventListener('click', () => {
+                // Если кнопка уже выбрана, снимаем выбор
+                if (button.classList.contains('selected')) {
+                    button.classList.remove('selected');
+                    // Устанавливаем значение в скрытом поле для текущей группы как null
+                    const hiddenInput = group.closest('.input-container').querySelector('input[type="hidden"]');
+                    hiddenInput.value = '';
+                } else {
+                    // Сбрасываем выбор для всех кнопок в текущей группе
+                    optionButtons.forEach(btn => btn.classList.remove('selected'));
+                    // Устанавливаем выбор для текущей кнопки
+                    button.classList.add('selected');
+                    
+                    // Устанавливаем значение в скрытом поле для текущей группы
+                    const hiddenInput = group.closest('.input-container').querySelector('input[type="hidden"]');
+                    hiddenInput.value = button.getAttribute('data-value');
+                    
+                }
+            });
         }
     });
+});
 
- 
-    const questionContainers = document.querySelectorAll('.input-container');
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////// множественный выбор  //////////////////////////////////////////////////////////////////////
 
-    questionContainers.forEach(container => {
-        const question = container.querySelector('.question label').textContent.trim();
-        const response = container.querySelector('.response');
-        const hiddenInput = container.querySelector('input[type="hidden"]');
-        const optionButtons = container.querySelectorAll('.option-button');
 
-        optionButtons.forEach(button => {
+// Получаем все группы кнопок, которые должны поддерживать множественный выбор
+const multiSelectGroups = document.querySelectorAll('.multi-select-group');
+
+// Добавляем обработчик события клика только для этих групп
+multiSelectGroups.forEach(group => {
+    const optionButtons = group.querySelectorAll('.option-button');
+    
+    optionButtons.forEach(button => {
+        // Проверяем, добавлен ли уже обработчик события клика
+        if (!button.classList.contains('click-handler-added')) {
+            button.classList.add('click-handler-added'); // Добавляем класс для отслеживания добавления обработчика
             button.addEventListener('click', () => {
-                const selectedValue = button.getAttribute('data-value');
-                hiddenInput.value = selectedValue;
 
-                // Подсветите выбранный вариант ответа
-                optionButtons.forEach(btn => {
-                    btn.classList.remove('selected');
-                });
-                button.classList.add('selected');
+                const dataValue = button.getAttribute('data-value');
+                console.log('выбрано', dataValue);
 
-                // Выведите выбранный вопрос и ответ в консоль (для проверки)
-                console.log('Вопрос:', question);
-                console.log('Ответ:', selectedValue);
+                // Если кнопка уже выбрана, снимаем выбор
+                if (button.classList.contains('selected')) {
+                    button.classList.remove('selected');
+                    // Устанавливаем значение в скрытом поле для текущей группы как null
+                    const hiddenInput = group.closest('.input-container').querySelector('input[type="hidden"]');
+                    hiddenInput.value = '';
+                } 
+                else if (dataValue == "nic"){  //нажатие на кнопку nic
+                        // Подсветите выбранный вариант ответа
+                        console.log('нажато nic или pouze', dataValue);
+                        optionButtons.forEach(btn => {
+                           btn.classList.remove('selected');
+                        });
+                        button.classList.add('selected');
+                        }
+                        else {
+                            const nicButton = group.querySelector('.option-button[data-value="nic"]');
+                            nicButton.classList.remove('selected');
+                            console.log('принял что надо убрать ', nicButton);
+
+                    // Устанавливаем выбор для текущей кнопки
+                    button.classList.add('selected');
+                    
+                    // Устанавливаем значение в скрытом поле для текущей группы
+                    const hiddenInput = group.closest('.input-container').querySelector('input[type="hidden"]');
+                    hiddenInput.value = button.getAttribute('data-value');
+                    
+
+
+                }
             });
-        });
+        }
     });
+});
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////  Множественный выбор для онли    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Получаем все группы кнопок, которые должны поддерживать множественный выбор
+const multiSelectGroup = document.querySelectorAll('.multi-select-group-only');
+
+// Добавляем обработчик события клика только для этих групп
+multiSelectGroup.forEach(group => {
+    const optionButtons = group.querySelectorAll('.option-button');
+    
+    optionButtons.forEach(button => {
+        // Проверяем, добавлен ли уже обработчик события клика
+        if (!button.classList.contains('click-handler-added')) {
+            button.classList.add('click-handler-added'); // Добавляем класс для отслеживания добавления обработчика
+            button.addEventListener('click', () => {
+
+                const dataValue = button.getAttribute('data-value');
+                console.log('выбрано', dataValue);
+
+                // Если кнопка уже выбрана, снимаем выбор
+                if (button.classList.contains('selected')) {
+                    button.classList.remove('selected');
+                    // Устанавливаем значение в скрытом поле для текущей группы как null
+                    const hiddenInput = group.closest('.input-container').querySelector('input[type="hidden"]');
+                    hiddenInput.value = '';
+                } 
+                else if ((dataValue == "nic") || (dataValue == "only")){  //нажатие на кнопку nic
+                        // Подсветите выбранный вариант ответа
+                        console.log('нажато nic или pouze', dataValue);
+                        optionButtons.forEach(btn => {
+                           btn.classList.remove('selected');
+                        });
+                        button.classList.add('selected');
+                        }
+                        else {
+                            const nicButton = group.querySelector('.option-button[data-value="nic"]');
+                            nicButton.classList.remove('selected');
+                            console.log('принял что надо убрать ', nicButton);
+
+                            const onlyButton = group.querySelector('.option-button[data-value="only"]');
+                            onlyButton.classList.remove('selected');
+                            console.log('принял что надо убрать ', onlyButton);
+                        
+                    // Устанавливаем выбор для текущей кнопки
+                    button.classList.add('selected');
+                    
+                    // Устанавливаем значение в скрытом поле для текущей группы
+                    const hiddenInput = group.closest('.input-container').querySelector('input[type="hidden"]');
+                    hiddenInput.value = button.getAttribute('data-value');
+                    
+
+
+                }
+            });
+        }
+    });
+});
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
