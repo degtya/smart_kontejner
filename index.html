@@ -20,7 +20,7 @@
         </ul>
     </nav>
 
-    <img src="text.jpg">
+    <img src="text.JPG">
 
     <main>
         <form onsubmit="return false;">
@@ -577,12 +577,36 @@
                         <span></span>
                     </div>
                     </div>
-                    <div class="input-container">
-                        <input type="submit"  value="Poptat cenu" >
-                    </div>
+
+                <div class="input-container">  
+                     <button id="openPopupButton">Poptat cenu</button>
+                </div>
         </form>
+
+       
    
    </main>
+   
+
+
+   <div id="popup" class="popup">
+       <div class="popup-content">
+           <span id="closePopupButton" class="close-popup-button">&times;</span>
+           <h1>Cenová poptávka</h1>
+           <h3>Neváhejte a ozvěte se nám!</h3>
+           <form id="priceRequestForm">
+                <label for="name">Jméno a přímění:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>              
+                <div class="consent">
+                    <input type="checkbox" id="consentCheckbox" required>
+                    <label for="consentCheckbox">Souhlasím se zpracováním osobních údajů na základě zásad ochrany osobních údajů.</label>
+                </div>
+                <button type="submit">Odeslat</button>
+            </form>
+       </div>
+   </div>
 
 
     <script src="script.js"></script>

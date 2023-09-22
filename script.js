@@ -211,7 +211,34 @@ multiSelectGroup.forEach(group => {
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////      Всплывающее окно     //////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Находим кнопку открытия попапа и попап
+const openPopupButton = document.getElementById('openPopupButton');
+const popup = document.getElementById('popup');
+
+// Находим кнопку закрытия попапа
+const closePopupButton = document.getElementById('closePopupButton');
+
+// Добавляем обработчик события для открытия попапа
+openPopupButton.addEventListener('click', () => {
+    popup.style.display = 'block';
+});
+
+// Добавляем обработчик события для закрытия попапа
+closePopupButton.addEventListener('click', () => {
+    popup.style.display = 'none';
+});
+
+// Добавляем обработчик события для закрытия попапа при клике вне попапа
+window.addEventListener('click', (event) => {
+    if (event.target === popup) {
+        popup.style.display = 'none';
+    }
+});
+
+
 
 
 
