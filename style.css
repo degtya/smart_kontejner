@@ -56,6 +56,15 @@ body, h1, h2, p {
     align-items: flex-start;
   }
   
+  .container1 {
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #63898B;
+    border-radius: 10px;
+    align-items: flex-start;
+  }
+  
  
 img {
   width: 80%;
@@ -108,14 +117,24 @@ img {
     margin-bottom: 20px;
   }
   
-  .input-container .question {
+   .input-container .question {
     flex: 1;
     margin-right: 20px;
     margin-left: 20px;
     text-align: left;
   }
+  .multi {
+    font-size: 16px; /* Размер шрифта */
+    color: #E0F4F5; /* Цвет текста */
+    font-weight: bold; /* Полужирный шрифт */
+    font-size: 20px;
+    text-align: left;
+
+    margin-left: 10px;
+  }
+
   
-  .input-container .response {
+     .input-container .response {
     flex: 3;
     display: flex;
     align-items: center;
@@ -243,6 +262,7 @@ img {
 
 
 
+
 /* Стилизация меток (labels) */
 label {
   display: block;
@@ -289,6 +309,16 @@ button[type="submit"]:hover {
 
 input[type="checkbox"] {
   margin-right: 10px; /* Отступ справа от квадратика */
+}
+
+
+.custom-select {
+  max-width: 50px;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  background-color: #043641;
+    color: #E0F4F5;
 }
 
   /* Footer styles */
