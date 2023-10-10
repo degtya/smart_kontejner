@@ -52,31 +52,38 @@
                     </div>
                 </div>
 
-                <div class="input-container">
-                    <div class="question">
-                        <label for="totalCapacity">Celková kapacita:</label>
-                    </div>
-                    <div class="response">
-                        <input type="number" id="totalCapacity" name="totalCapacity">
-                        <span class="unit">kg</span>
-                    </div>
-                    <div class="description">
-                        <span class="descrition">Uveďte, jaké maximální množství (hmotnost) plynu chcete uskladnit</span>
-                    </div>
-                </div>
+                <div class="container1"> 
+                    <span class="multi"> Vyplňte jednu z možností: </span>     
+                        <div class="input-container">
+                            <div class="question">
+                                <label for="totalCapacity">Celková kapacita:</label>
+                            </div>
+                            <div class="response">
+                                <input type="number" id="totalCapacity" name="totalCapacity">
+                                <select name="выбор" class="custom-select">
+                                    <option value="-">-</option>
+                                    <option value="kg">kg</option>
+                                    <option value="Nm3">Nm3</option>
+                                </select>
+                            </div>
+                            <div class="description">
+                                <span class="descrition">Uveďte, jaké maximální množství (hmotnost) plynu chcete uskladnit</span>
+                            </div>
+                        </div>
 
-                <div class="input-container">
-                    <div class="question">
-                        <label for="totalWaterVolume">Celkový vodní objem:</label>
+                        <div class="input-container">
+                            <div class="question">
+                                <label for="totalWaterVolume">Celkový vodní objem:</label>
+                            </div>
+                            <div class="response">
+                                <input type="number" id="totalWaterVolume" name="totalWaterVolume">
+                                <span class="unit">l</span>
+                            </div>
+                            <div class="description">
+                                <span class="descrition">Požadujete-li určitý vodní objem</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="response">
-                        <input type="number" id="totalWaterVolume" name="totalWaterVolume">
-                        <span class="unit">l</span>
-                    </div>
-                    <div class="description">
-                        <span class="descrition">Požadujete-li určitý vodní objem</span>
-                    </div>
-                </div>
 
                 <div class="input-container">
                     <div class="question">
@@ -527,6 +534,8 @@
 
    </main>
    
+
+
    <div id="popup" class="popup">
        <div class="popup-content">
            <span id="closePopupButton" class="close-popup-button">&times;</span>
@@ -550,7 +559,9 @@
        </div>
    </div>
 
+
     <script src="script.js"></script>
+
 </body>
 
 
