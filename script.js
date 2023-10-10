@@ -28,7 +28,7 @@ function showQuestionAndDescription(inputElement, placeholderText) {
 }
 
 totalCapacityInput.addEventListener('input', function () {
-    const placeholderText = 'Celkový vodní objem bude spočítán podle vybrané kapacity';
+    const placeholderText = 'Celkový vodní objem bude spočítán podle zadané kapacity';
 
     if (this.value !== '') {
         totalWaterVolumeInput.style.visibility = 'hidden'; // Скрываем элементы ввода
@@ -43,7 +43,7 @@ totalCapacityInput.addEventListener('input', function () {
 });
 
 totalWaterVolumeInput.addEventListener('input', function () {
-    const placeholderText = 'Celková kapacita bude spočítána podle vybraného objemu';
+    const placeholderText = 'Celková kapacita bude spočítána podle zadaného objemu';
 
     if (this.value !== '') {
         totalCapacityInput.style.visibility = 'hidden'; // Скрываем элементы ввода
@@ -124,7 +124,7 @@ multiSelectGroups.forEach(group => {
                 } 
                 else if (dataValue == "nic"){  //нажатие на кнопку nic
                         // Подсветите выбранный вариант ответа
-                        console.log('нажато nic или pouze', dataValue);
+                        console.log('нажато nic ', dataValue);
                         optionButtons.forEach(btn => {
                            btn.classList.remove('selected');
                         });
@@ -133,6 +133,7 @@ multiSelectGroups.forEach(group => {
                         else {
                             const nicButton = group.querySelector('.option-button[data-value="nic"]');
                             nicButton.classList.remove('selected');
+                            console.log('нажато: ', dataValue);
                             console.log('принял что надо убрать ', nicButton);
 
                     // Устанавливаем выбор для текущей кнопки
@@ -188,11 +189,11 @@ multiSelectGroup.forEach(group => {
                         else {
                             const nicButton = group.querySelector('.option-button[data-value="nic"]');
                             nicButton.classList.remove('selected');
-                            console.log('принял что надо убрать ', nicButton);
+                            console.log('принял что надо убрать nic- ', nicButton);
 
                             const onlyButton = group.querySelector('.option-button[data-value="only"]');
                             onlyButton.classList.remove('selected');
-                            console.log('принял что надо убрать ', onlyButton);
+                            console.log('принял что надо убрать only-', onlyButton);
                         
                     // Устанавливаем выбор для текущей кнопки
                     button.classList.add('selected');
